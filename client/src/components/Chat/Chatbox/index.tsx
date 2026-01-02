@@ -1,4 +1,4 @@
-import { ActionIcon, Box, Card, Group, Textarea } from "@mantine/core";
+import { ActionIcon, Card, Group, Textarea } from "@mantine/core";
 import { IconArrowRight } from "@tabler/icons-react";
 
 type Props = {
