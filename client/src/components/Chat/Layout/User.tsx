@@ -8,10 +8,10 @@ export default function User() {
     <Menu>
       <Menu.Target>
         <Group style={{ cursor: "pointer" }}>
-          <Avatar>{data?.user.name[0]}</Avatar>
+          <Avatar>{data?.user?.name?.[0]}</Avatar>
           <Box>
-            <Box>{data?.user.name}</Box>
-            <Box fz="xs">{data?.user.email}</Box>
+            <Box>{data?.user?.name}</Box>
+            <Box fz="xs">{data?.user?.email}</Box>
           </Box>
         </Group>
       </Menu.Target>
