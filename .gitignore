@@ -1,0 +1,53 @@
+# ----------------------------------------------------
+# 📂 General Node.js Ignored Files
+# ----------------------------------------------------
+
+# Dependency installation directory
+node_modules
+/server/node_modules
+/client/node_modules
+
+# Logs and runtime data
+*.log
+npm-debug.log*
+.npm
+.node_repl_history
+
+# Package manager files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Compiled/Build output directories (common names)
+/dist
+/build
+/out
+/release
+/tmp
+
+# TypeScript build output
+# If you compile your TS files, the output folder should be ignored
+# assuming your project builds to a 'dist' folder at the root of the server
+/server/dist
+/server/build
+
+# Test/Coverage files
+/coverage
+.nyc_output
+
+# ----------------------------------------------------
+# 🛡️ Sensitive Files / Environment Variables
+# ----------------------------------------------------
+
+# Environment variables containing sensitive data (DB URLs, API keys, etc.)
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Key files/folders related to secrets or deployment
+.DS_Store
+.vscode/settings.json # VSCode workspace settings (often personal)
+.vscode/*.log
