@@ -5,7 +5,13 @@ import { config } from "@/util/config";
 
 export const auth = betterAuth({
   trustedOrigins: [config.FRONTEND_URL],
-
+  advanced: {
+    defaultCookieAttributes: {
+      sameSite: "none",
+      secure: true,
+      partitioned: true,
+    },
+  },
   database: prismaAdapter(prisma, {
     provider: "postgresql",
   }),
