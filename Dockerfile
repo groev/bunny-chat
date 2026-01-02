@@ -10,7 +10,7 @@ COPY server/package.json server/package.json
 COPY client/package.json client/package.json
 
 # Install dependencies (frozen lockfile ensures consistency)
-RUN bun install --frozen-lockfile
+RUN bun install 
 
 # Copy the server source code
 COPY server server
