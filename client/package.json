@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "npx serve -s packages/client/dist"
+    "start": "npx serve -s client/dist"
   },
   "dependencies": {
     "@ai-sdk/react": "^3.0.5",
