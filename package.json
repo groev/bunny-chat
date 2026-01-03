@@ -1,9 +1,12 @@
 {
   "name": "bunny-chat",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
   "workspaces": [
     "client",
     "server"
-  ]
+  ],
+  "scripts": {
+    "build": "npm run build --workspace=apps/client && npm run build --workspace=apps/server"
+  }
 }

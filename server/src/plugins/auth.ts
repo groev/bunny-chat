@@ -13,6 +13,10 @@ declare module "fastify" {
   interface FastifyInstance {
     protect: (req: FastifyRequest, reply: FastifyReply) => Promise<void>;
   }
+
+  interface FastifyReply {
+    sendFile: (path: string) => void;
+  }
 }
 
 async function authHandler(fastify: FastifyInstance) {

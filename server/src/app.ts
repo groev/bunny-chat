@@ -17,6 +17,7 @@ import { rawbody } from "./plugins/rawbody";
 import { helmet } from "./plugins/helmet";
 import { errorHandler } from "./plugins/error";
 import { swagger } from "./plugins/swagger";
+import path from "node:path";
 
 import { authPlugin } from "./plugins/auth";
 import { chatRoutes } from "./modules/chat/chat.routes";
@@ -50,13 +51,6 @@ export async function app(server: FastifyInstance) {
     { prefix: "/api" }
   );
 
-  server.get("/", (_, res) => {
-    res.send({
-      status: "ok",
-      message: "api is running",
-    });
-  });
-
   server.get("/health", async (_, res) => {
     const dbIsUp = await prisma.$queryRaw`SELECT 1;`;
     if (dbIsUp) {
@@ -67,6 +61,15 @@ export async function app(server: FastifyInstance) {
       return;
     }
     res.status(500).send("api is down");
+  });
+
+  server.register(require("@fastify/static"), {
+    root: path.join(__dirname, "../../client/dist"),
+    prefix: "/",
+  });
+
+  server.setNotFoundHandler((req, res) => {
+    res.status(200).sendFile("index.html");
   });
 
   await server.ready();
