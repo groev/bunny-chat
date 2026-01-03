@@ -7,6 +7,7 @@
     "server"
   ],
   "scripts": {
-    "build": "npm run build --workspace=apps/client && npm run build --workspace=apps/server"
+    "build": "bun run --filter ./client build && bun run --filter ./server build",
+    "start": "bun run --filter ./server start"
   }
 }
